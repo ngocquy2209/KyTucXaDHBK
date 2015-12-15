@@ -1,0 +1,158 @@
+﻿body {
+}
+
+.modal-chitiet {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+.frame-ChiTietPhong {
+    top:93px;
+    left:10%;
+    width:80%;
+    height:500px;
+    display:none;
+    background-color:#E1F5FE;
+    opacity: 1;
+    -moz-opacity: 1;
+    position:fixed;
+    z-index:1002;
+    border-radius:4px;
+    position: fixed;
+    padding:5px;
+}
+.frame-HeaderBar
+{
+    top:50px;
+    left:10%;
+    width:80%;
+    height:40px;
+    display:none;
+    background-color:#0288D1;
+    opacity: 1;
+    -moz-opacity: 1;
+    position:fixed;
+    z-index:1003;
+    border-radius:4px;
+    position: fixed;
+    padding:5px;
+}
+.CellPhong{
+    background-color:#7dd1d4;
+    width:100%;
+    height:100%;
+    border-radius:3px;
+}
+.CellPhongSVDK{
+    background-color:#4ad7dc;
+    width:100%;
+    height:100%;
+    border-radius:3px;
+}
+.NenModalDangKy{
+    display:none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:10047;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+.headerDangky{
+    top:50px;
+    left:35%;
+    width:26%;
+    height:40px;
+    display:none;
+    background-color:#0288D1;
+    opacity: 1;
+    -moz-opacity: 1;
+    position:fixed;
+    z-index:10048;
+    border-radius:4px;
+    position: fixed;
+    padding:5px;
+}
+.thongtinDangky{
+    top:93px;
+    left:35%;
+    width:26%;
+    height:auto;
+    display:none;
+    background-color:#98c3be;
+    opacity: 1;
+    -moz-opacity: 1;
+    position:fixed;
+    z-index:10048;
+    border-radius:4px;
+    position: fixed;
+    padding:5px;
+}
+.chitietsinhvien{
+}
+
+.table-listPhong{
+    width:100%;
+}
+.table-listPhong tr td {
+    padding:2px;
+    padding-top:4px;
+    
+}
+.menuQuanLyPhong {
+    width:250px;
+}
+
+.menuQuanLyPhong li{
+    float:right;
+    list-style-type:none;
+    width: 125px;
+    height: 40px;
+    line-height: 40px;
+    
+    padding: 0 1em;
+}
+.subMenuQuanLyPhong{
+    display:none;
+}
+.menuQuanLyPhong li:hover .subMenuQuanLyPhong {
+    display:block;
+}
+
+.subMenuQuanLyPhong li{
+    border-bottom: 1px solid #e8e8e8;
+}
+.tableBeautiful{
+    border-collapse:collapse;
+}
+.tableBeautiful tr td{
+  border-bottom:1px solid;
+  height:40px;
+  border-color:#e8e8e8;
+}
+.tableBeautiful thead tr td {
+    background-color:#7dd1d4;
+    font-size:18px;
+}
+.button-Model-2 {
+    background-color:#0288D1;
+    border-radius:6px;
+    height:30px;
+    color:#ffffff;
+    font-weight:bold;
+    font-size:15px;
+
+}
+

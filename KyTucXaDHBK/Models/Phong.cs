@@ -18,6 +18,7 @@ namespace KyTucXaDHBK.Models
         public int soGiuong { set; get; }
         public int soLuongSV { set; get; }
         public double giaPhong { set; get; }
+        public String gioiTinh { set; get; }
         public int soLuongDangKy { set; get; }
         public int soLuongGiaHan { set; get; }
         public int soLuongYeuCau { set; get; }
@@ -36,7 +37,7 @@ namespace KyTucXaDHBK.Models
         public virtual ICollection<PhiDichVu> CacPhiDichVu { set; get; }
         public Phong() { }
         public Phong(string idPhong, string idNha, int tang, string tenPhong, int soGiuong, int soLuongSV,
-            double giaPhong, int soLuongDangKy, int soLuongGiaHan, int soLuongYeuCau, string idTinhTrangPhong)
+            double giaPhong,String gioiTinh, int soLuongDangKy, int soLuongGiaHan, int soLuongYeuCau, string idTinhTrangPhong)
         {
             this.idPhong = idPhong;
             this.idNha = idNha;
@@ -45,6 +46,7 @@ namespace KyTucXaDHBK.Models
             this.soGiuong = soGiuong;
             this.soLuongSV = soLuongSV;
             this.giaPhong = giaPhong;
+            this.gioiTinh = gioiTinh;
             this.soLuongDangKy = soLuongDangKy;
             this.soLuongGiaHan = soLuongGiaHan;
             this.soLuongYeuCau = soLuongYeuCau;

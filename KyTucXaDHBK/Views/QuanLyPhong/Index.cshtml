@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+}
+@using KyTucXaDHBK.Models;
+<link href="~/Content/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/ModalQuanLyPhong.css" rel="stylesheet">
+
+
+<div align="right" class="container" style="width:100%">
+    <ul class="menuQuanLyPhong">
+        <li>
+            <img src="~/Assets/ios7-gear-48.png" width="20" height="20" />
+            <ul class="subMenuQuanLyPhong">
+                <li><a href='@Url.Action("Quanlynha", "QuanLyPhong")'>Quản lý nhà</a></li>
+                <li>@Html.ActionLink("Thêm Phòng", "themphong", "QuanLyPhong")</li>
+            </ul>
+        </li>
+    </ul>
+    @*  *@
+    <div style="width:100%" align="left">
+
+
+        <table class="table">
+            @foreach (Nha nha in ViewBag.listNha)
+            {
+                <tr>
+                    <td>
+                        <h4><img src="~/Assets/Home-50.png" width="25" height="25" /> @nha.tenNha</h4>
+                        <table class="table-listPhong">
+                            <tr>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                                <td width="8%"></td>
+                            </tr>
+                            @for (int tang = 1; tang <= nha.soTang; tang++)
+                            {
+                                <tr>
+                                    @foreach (Phong phong in ViewBag.listPhong)
+                                    {
+                                        if ((phong.Nha.idNha == nha.idNha) && (phong.tang == tang))
+                                        {
+                                            string mau = "";
+                                            if (phong.idTinhTrangPhong.Equals("ttp2")) { mau = "background-color:#929292"; }
+                                            <td style="height:50px;">
+
+                                                <!-- Cell Phong-->
+                                                <div class="CellPhong" style="@mau" onclick="CellPhongClick('@phong.idPhong','@phong.tenPhong','@nha.tenNha')">
+                                                    <table style="width:100%">
+                                                        <tr>
+                                                            <td style="width:80%;">
+                                                                <div>
+                                                                    <div style="float:left;width:60%;display:inline;margin-left:0px"><font size="4">@phong.tenPhong</font></div>
+                                                                    @if (phong.idTinhTrangPhong.Equals("ttp3"))
+                                                                    {
+                                                                        <div style="width:100%;clear:both" align="center">
+                                                                            <img width="40" height="40" src="~/Assets/School Filled-50.png" />
+                                                                        </div>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (phong.idTinhTrangPhong.Equals("ttp4"))
+                                                                        {
+                                                                            <div style="width:100%;clear:both;height:40px" align="center">
+                                                                                <img width="35" height="35" src="~/Assets/Download-50.png" />
+                                                                            </div>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <div style="float:left;width:40%;display:inline">
+                                                                                @if (@phong.soLuongYeuCau != 0)
+                                                                                {
+                                                                                    <span class="badge">@phong.soLuongYeuCau</span>
+                                                                                }
+                                                                            </div>
+
+                                                                            <div style="clear:both">
+                                                                                @for (int i = 0; i < phong.soGiuong; i++)
+                                                                                {
+                                                                                    if (i == 4 || i == 8 || i == 12)
+                                                                                    {
+                                                                                        <br />
+                                                                                    }
+                                                                                    if (i < phong.soLuongSV)
+                                                                                    {
+                                                                                        if (phong.gioiTinh.Equals("Nam"))
+                                                                                        {
+                                                                                            //in hinh nam
+                                                                                            <img src="~/Assets/edit_user.png" width="15" height="15" />
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            //in hinh nu
+                                                                                            <img src="~/Assets/support_woman.png" width="15" height="15" />
+                                                                                        }
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        //in hinh trong
+                                                                                        if (phong.gioiTinh.Equals("Nam"))
+                                                                                        {
+                                                                                            //in hinh nam
+                                                                                            <img src="~/Assets/Nam-Trong-50.png" width="15" height="15" />
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            //in hinh nu
+                                                                                            <img src="~/Assets/Nu-Trong-50.png" width="15" height="15" />
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            </div>
+                                                                        }
+                                                                    }
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                </tr>
+            }
+        </table>
+
+   </div>
+</div>
